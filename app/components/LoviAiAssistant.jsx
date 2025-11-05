@@ -15,7 +15,7 @@ const ChatMessage = ({ message, isUser, delay = 0, onSliderChange }) => {
       className={`flex gap-3 mb-6 ${isUser ? 'flex-row-reverse' : 'flex-row'}`}
     >
       {!isUser && (
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shrink-0 shadow-sm">
+        <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shrink-0 shadow-sm">
           <span className="text-white font-bold text-xs" style={{ fontFamily: 'var(--font-primary)' }}>D</span>
         </div>
       )}
@@ -38,7 +38,7 @@ const ChatMessage = ({ message, isUser, delay = 0, onSliderChange }) => {
                   setSliderValue(e.target.value);
                   onSliderChange && onSliderChange(e.target.value);
                 }}
-                className="w-full h-3 bg-gradient-to-r from-[#FF9EAA] via-[#C4A4FF] to-[#8FD0FF] rounded-full appearance-none cursor-pointer slider-custom"
+                className="w-full h-3 bg-linear-to-r from-[#FF9EAA] via-[#C4A4FF] to-[#8FD0FF] rounded-full appearance-none cursor-pointer slider-custom"
                 style={{
                   background: `linear-gradient(to right, #FF9EAA 0%, #C4A4FF 50%, #8FD0FF 100%)`
                 }}
@@ -217,10 +217,10 @@ export const LoviAiAssistantDemo = () => {
   return (
     <div className="relative w-full h-full bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-[#f0f0f5] flex flex-col" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #ffffff 19%, #f6f6fa 21%)' }}>
       {/* Phone Header */}
-      <div className="px-6 pt-6 pb-4 border-b border-[#f0f0f5] sticky top-0 z-10 backdrop-blur-sm bg-white/95 flex-shrink-0">
+      <div className="px-6 pt-6 pb-4 border-b border-[#f0f0f5] sticky top-0 z-10 backdrop-blur-sm bg-white/95 shrink-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shadow-sm">
               <span className="text-white font-bold text-xs" style={{ fontFamily: 'var(--font-primary)' }}>D</span>
             </div>
             <div>
@@ -254,7 +254,7 @@ export const LoviAiAssistantDemo = () => {
             exit={{ opacity: 0 }}
             className="flex gap-3 mb-6"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#606DFF] to-[#C4A4FF] flex items-center justify-center shrink-0">
               <span className="text-white font-bold text-xs" style={{ fontFamily: 'var(--font-primary)' }}>D</span>
             </div>
             <div className="bg-white rounded-2xl px-5 py-4 shadow-sm">
@@ -282,7 +282,7 @@ export const LoviAiAssistantDemo = () => {
       </div>
 
       {/* Action Buttons - Matching lovi.care style exactly */}
-      <div className="border-t border-[#f0f0f5] px-6 py-4 backdrop-blur-sm bg-white/95 flex-shrink-0 space-y-2">
+      <div className="border-t border-[#f0f0f5] px-6 py-4 backdrop-blur-sm bg-white/95 shrink-0 space-y-2">
         <button 
           onClick={() => {}}
           className="w-full py-4 bg-[#606DFF] text-white rounded-xl font-semibold text-sm hover:bg-[#5570FF] transition-all flex items-center justify-center gap-2 shadow-sm"

@@ -55,7 +55,7 @@ const AiAssistantSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative mx-auto w-full max-w-sm"
         >
-          <div className="relative w-full aspect-[9/19] max-w-[360px] mx-auto">
+          <div className="relative w-full aspect-9/19 max-w-[360px] mx-auto">
             <LoviAiAssistantDemo />
           </div>
         </motion.div>

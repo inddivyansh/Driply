@@ -76,13 +76,13 @@ const CoreUsps = () => {
             >
               <div className="glass rounded-3xl p-8 md:p-12 hover:scale-[1.01] transition-all duration-300 hover:shadow-[0_0_30px_rgba(96,109,255,0.1)]">
                 {/* Subtle gradient border effect on hover */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#606DFF] to-[#5570FF] opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-[#606DFF] to-[#5570FF] opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
                 
                 <div className="relative z-10">
                   {/* Icon and Number */}
                   <div className="flex items-center gap-4 mb-6">
                     <div className="text-6xl">{usp.icon}</div>
-                    <div className="text-5xl font-bold bg-gradient-to-r from-[#606DFF] to-[#5570FF] bg-clip-text text-transparent">
+                    <div className="text-5xl font-bold bg-linear-to-r from-[#606DFF] to-[#5570FF] bg-clip-text text-transparent">
                       {usp.number}
                     </div>
                   </div>

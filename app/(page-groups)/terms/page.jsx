@@ -14,8 +14,8 @@ export default function TermsPage() {
       <PolicySection title="Acceptance of Terms" number={1}>
         <p>
           By downloading, accessing, or using the Lovi mobile application
-          ("Application") or our website ("Website"), you agree to be bound by
-          these Terms of Use ("Agreement"). If you do not agree to these
+          (&quot;Application&quot;) or our website (&quot;Website&quot;), you agree to be bound by
+          these Terms of Use (&quot;Agreement&quot;). If you do not agree to these
           terms, do not use the Services.
         </p>
       </PolicySection>

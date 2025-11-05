@@ -25,7 +25,7 @@ const FaqItem = ({ question, children, delay = 0, isOpen, onToggle }) => {
         <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#292824] text-left pr-4" style={{ fontFamily: 'var(--font-primary)' }}>
           {question}
         </h3>
-        <div className="relative w-8 h-8 flex-shrink-0">
+        <div className="relative w-8 h-8 shrink-0">
           <motion.div
             className="absolute w-5 h-0.5 bg-[#606DFF] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={{ rotate: isOpen ? 45 : 0 }}

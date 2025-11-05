@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -49,13 +49,8 @@ const HeroSection = () => {
     triggerOnce: false,
   });
 
-  // Initialize with unshuffled array for SSR, then shuffle on client
-  const [shuffledDresses, setShuffledDresses] = useState(traditionalDresses);
-
-  useEffect(() => {
-    // Shuffle only on client-side to maintain consistency
-    setShuffledDresses(shuffleArray(traditionalDresses));
-  }, []);
+  // Use lazy initialization to shuffle only once on component mount
+  const [shuffledDresses] = useState(() => shuffleArray(traditionalDresses));
 
   return (
     <section ref={ref} className="relative flex flex-col items-center justify-center pt-32 md:pt-48 pb-20 overflow-hidden text-center">
@@ -180,10 +175,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative w-[200px] md:w-[250px] lg:w-[300px] aspect-[9/19]"
+            className="relative w-[200px] md:w-[250px] lg:w-[300px] aspect-9/19"
           >
             <div className="relative w-full h-full bg-black rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl">
-              <div className="relative w-full h-full bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden" suppressHydrationWarning>
+              <div className="relative w-full h-full bg-gray-900 rounded-4xl md:rounded-4xl overflow-hidden" suppressHydrationWarning>
                 <Image
                   src={shuffledDresses[0].url}
                   alt={shuffledDresses[0].name}
@@ -227,10 +222,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="relative w-[240px] md:w-[300px] lg:w-[360px] aspect-[9/19] z-10"
+            className="relative w-60 md:w-[300px] lg:w-[360px] aspect-9/19 z-10"
           >
             <div className="relative w-full h-full bg-black rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl">
-              <div className="relative w-full h-full bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden" suppressHydrationWarning>
+              <div className="relative w-full h-full bg-gray-900 rounded-4xl md:rounded-4xl overflow-hidden" suppressHydrationWarning>
                 <Image
                   src={shuffledDresses[1].url}
                   alt={shuffledDresses[1].name}
@@ -275,10 +270,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative w-[200px] md:w-[250px] lg:w-[300px] aspect-[9/19]"
+            className="relative w-[200px] md:w-[250px] lg:w-[300px] aspect-9/19"
           >
             <div className="relative w-full h-full bg-black rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl">
-              <div className="relative w-full h-full bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden" suppressHydrationWarning>
+              <div className="relative w-full h-full bg-gray-900 rounded-4xl md:rounded-4xl overflow-hidden" suppressHydrationWarning>
                 <Image
                   src={shuffledDresses[2].url}
                   alt={shuffledDresses[2].name}

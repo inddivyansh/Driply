@@ -40,7 +40,7 @@ const AiModeCard = () => {
               onClick={toggleAiMode}
               className={`relative w-16 h-8 rounded-full transition-all duration-300 ${
                 isAiMode 
-                  ? 'bg-gradient-to-r from-[#00d9ff] to-[#b537f2]' 
+                  ? 'bg-linear-to-r from-[#00d9ff] to-[#b537f2]' 
                   : 'bg-[#2a2a35]'
               }`}
             >
@@ -102,7 +102,7 @@ const AiModeCard = () => {
 
                   {/* Quick Actions */}
                   <div className="pt-4 space-y-2">
-                    <button className="w-full py-3 bg-gradient-to-r from-[#00d9ff] to-[#b537f2] text-white rounded-xl font-semibold text-sm hover:scale-105 transition-transform">
+                    <button className="w-full py-3 bg-linear-to-r from-[#00d9ff] to-[#b537f2] text-white rounded-xl font-semibold text-sm hover:scale-105 transition-transform">
                       Ask AI Stylist
                     </button>
                     <button className="w-full py-3 glass-light text-white rounded-xl font-semibold text-sm hover:bg-white/10 transition-colors">
@@ -142,7 +142,7 @@ const AiModeCard = () => {
 
                   <button 
                     onClick={toggleAiMode}
-                    className="w-full py-3 glass-light text-white rounded-xl font-semibold text-sm hover:bg-gradient-to-r hover:from-[#00d9ff] hover:to-[#b537f2] transition-all"
+                    className="w-full py-3 glass-light text-white rounded-xl font-semibold text-sm hover:bg-linear-to-r hover:from-[#00d9ff] hover:to-[#b537f2] transition-all"
                   >
                     Activate AI Mode →
                   </button>
@@ -155,7 +155,7 @@ const AiModeCard = () => {
           <div className="mt-6 pt-6 border-t border-white/10">
             <div className="flex items-center justify-center gap-2">
               <span className="text-[#6b6b7a] text-xs">Powered by</span>
-              <span className="text-xs font-bold bg-gradient-to-r from-[#00d9ff] to-[#b537f2] bg-clip-text text-transparent">
+              <span className="text-xs font-bold bg-linear-to-r from-[#00d9ff] to-[#b537f2] bg-clip-text text-transparent">
                 Agentic AI
               </span>
             </div>

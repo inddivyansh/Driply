@@ -171,7 +171,7 @@ const ProductStore = () => {
             >
               <div className="glass rounded-3xl overflow-hidden">
                 {/* Product Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-[#131318]">
+                <div className="relative aspect-3/4 overflow-hidden bg-[#131318]">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -185,7 +185,7 @@ const ProductStore = () => {
                   </div>
 
                   {/* Quick Action Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                     <button className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-[#00d9ff] hover:text-white transition-all">
                       Quick View
                     </button>

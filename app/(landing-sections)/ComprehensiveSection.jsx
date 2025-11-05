@@ -49,14 +49,14 @@ const ComprehensiveSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[52px] tracking-[-1px] md:tracking-[-1.1px] text-[#292824] mb-8 font-semibold"
+              className="text-[28px] md:text-[36px] lg:text-[48px] leading-8 md:leading-10 lg:leading-[52px] tracking-[-1px] md:tracking-[-1.1px] text-[#292824] mb-8 font-semibold"
             >
               Driply is a comprehensive approach to your style journey.
             </motion.h2>
             
             {/* Paragraphs */}
             <div 
-              className="text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#5a5a5f] space-y-6"
+              className="text-[16px] md:text-[18px] leading-6 md:leading-7 text-[#5a5a5f] space-y-6"
               style={{ fontFamily: 'var(--font-geist)' }}
             >
               <motion.p

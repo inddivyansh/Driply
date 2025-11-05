@@ -1,5 +1,6 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next";
 import '../styles/globals.css';
 
 // Import the components
@@ -47,6 +48,9 @@ export default function RootLayout({ children }) {
         
         {/* Footer will be at the bottom */}
         <Footer />
+        
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   );

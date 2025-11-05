@@ -53,7 +53,7 @@ const StorePage = () => {
         price: '₹4,299',
         originalPrice: '₹7,999',
         discount: '46% OFF',
-        image: 'https://images.unsplash.com/photo-1583391733981-5ef48a287ea8?w=600&h=800&fit=crop',
+        image: 'https://media.samyakk.in/pub/media/catalog/product/g/r/green-kanchipuram-silk-saree-with-contrast-border-and-unstitched-blouse-sr27810.jpg',
         rating: 4.7,
         aiMatch: 92,
       },
@@ -73,7 +73,7 @@ const StorePage = () => {
         price: '₹3,899',
         originalPrice: '₹6,999',
         discount: '44% OFF',
-        image: 'https://images.unsplash.com/photo-1614497892429-e3f1a1e45b09?w=600&h=800&fit=crop',
+        image: 'https://cdn.pixabay.com/photo/2023/06/29/13/29/woman-8096424_1280.jpg',
         rating: 4.6,
         aiMatch: 89,
       },
@@ -85,7 +85,7 @@ const StorePage = () => {
         price: '₹1,499',
         originalPrice: '₹2,999',
         discount: '50% OFF',
-        image: 'https://images.unsplash.com/photo-1622287162716-495e44b0c5b4?w=600&h=800&fit=crop',
+        image: 'https://cdn.pixabay.com/photo/2019/08/14/21/00/kurta-4406719_1280.jpg',
         rating: 4.5,
         aiMatch: 93,
       },
@@ -95,7 +95,7 @@ const StorePage = () => {
         price: '₹1,899',
         originalPrice: '₹3,499',
         discount: '46% OFF',
-        image: 'https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=600&h=800&fit=crop',
+        image: 'https://assets0.mirraw.com/images/12365448/3426-1_zoom.jpg?1711981284',
         rating: 4.7,
         aiMatch: 96,
       },
@@ -105,7 +105,7 @@ const StorePage = () => {
         price: '₹1,699',
         originalPrice: '₹3,299',
         discount: '48% OFF',
-        image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600&h=800&fit=crop',
+        image: 'https://shilpiahuja.com/cdn/shop/files/SS23Men_sbyShilpiAhuja_1__page-0007_800x.jpg?v=1688540292',
         rating: 4.6,
         aiMatch: 91,
       },
@@ -115,7 +115,7 @@ const StorePage = () => {
         price: '₹1,299',
         originalPrice: '₹2,499',
         discount: '48% OFF',
-        image: 'https://images.unsplash.com/photo-1566206091558-7f218b696731?w=600&h=800&fit=crop',
+        image: 'https://m.media-amazon.com/images/I/71t3fK3+keL._AC_UY1100_.jpg',
         rating: 4.4,
         aiMatch: 88,
       },
@@ -203,7 +203,7 @@ const StorePage = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center mb-8">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center mb-4 mx-auto">
+              <div className="w-16 h-16 rounded-full bg-linear-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center mb-4 mx-auto">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -216,7 +216,7 @@ const StorePage = () => {
 
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3 glass-light p-3 rounded-xl">
-                <div className="w-8 h-8 rounded-full bg-[#6c47ff]/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#6c47ff]/10 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#6c47ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
@@ -224,7 +224,7 @@ const StorePage = () => {
                 <p className="text-[#5a5a8f] text-sm font-semibold">3x faster product discovery</p>
               </div>
               <div className="flex items-center gap-3 glass-light p-3 rounded-xl">
-                <div className="w-8 h-8 rounded-full bg-[#ff006e]/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#ff006e]/10 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#ff006e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
@@ -232,7 +232,7 @@ const StorePage = () => {
                 <p className="text-[#5a5a8f] text-sm font-semibold">Personalized to your style</p>
               </div>
               <div className="flex items-center gap-3 glass-light p-3 rounded-xl">
-                <div className="w-8 h-8 rounded-full bg-[#4169e1]/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#4169e1]/10 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-[#4169e1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
@@ -253,7 +253,7 @@ const StorePage = () => {
                   setIsAiMode(true);
                   setShowAiPopup(false);
                 }}
-                className="liquid-glass-button flex-1 px-5 py-3 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold"
+                className="liquid-glass-button flex-1 px-5 py-3 bg-linear-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold"
               >
                 Activate AI Mode
               </button>
@@ -309,7 +309,7 @@ const StorePage = () => {
                     <svg className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-[#5a5a8f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <button className="liquid-glass-button absolute right-2 top-1/2 -translate-y-1/2 px-6 py-3 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold">
+                    <button className="liquid-glass-button absolute right-2 top-1/2 -translate-y-1/2 px-6 py-3 bg-linear-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold">
                       Search
                     </button>
                   </div>
@@ -323,7 +323,7 @@ const StorePage = () => {
                           onClick={() => setSelectedQuery(suggestion.id)}
                           className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all ${
                             selectedQuery === suggestion.id
-                              ? 'liquid-glass-button bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white shadow-lg'
+                              ? 'liquid-glass-button bg-linear-to-r from-[#6c47ff] to-[#4169e1] text-white shadow-lg'
                               : 'glass-light border border-white/50 text-[#5a5a8f] hover:border-[#6c47ff]/30 hover:text-[#151581]'
                           }`}
                         >
@@ -399,7 +399,7 @@ const StorePage = () => {
                     >
                       <div className="glass rounded-2xl overflow-hidden hover:shadow-[0_20px_60px_-15px_rgba(108,71,255,0.3)] transition-all duration-300 border border-white/50">
                         {/* Product Image */}
-                        <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#f6f6fa] to-white">
+                        <div className="relative aspect-3/4 overflow-hidden bg-linear-to-br from-[#f6f6fa] to-white">
                           <Image
                             src={product.image}
                             alt={product.name}
@@ -408,7 +408,7 @@ const StorePage = () => {
                           />
                           
                           {/* Discount Badge */}
-                          <div className="absolute top-4 left-4 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
+                          <div className="absolute top-4 left-4 bg-linear-to-r from-[#6c47ff] to-[#4169e1] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
                             {product.discount}
                           </div>
 
@@ -428,7 +428,7 @@ const StorePage = () => {
 
                         {/* Product Info */}
                         <div className="p-5">
-                          <h3 className="text-[#151581] font-bold text-sm mb-2 line-clamp-2 min-h-[2.5rem]">
+                          <h3 className="text-[#151581] font-bold text-sm mb-2 line-clamp-2 min-h-10">
                             {product.name}
                           </h3>
                           
@@ -462,12 +462,12 @@ const StorePage = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-gradient-to-br from-[#f6f6fa] via-[#ffffff] to-[#f6f6fa] z-40 pt-24"
+            className="fixed inset-0 bg-linear-to-br from-[#f6f6fa] via-[#ffffff] to-[#f6f6fa] z-40 pt-24"
           >
             {/* Decorative Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-1/4 -left-20 w-96 h-96 bg-gradient-to-r from-[#6c47ff]/5 to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gradient-to-l from-[#4169e1]/5 to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute top-1/4 -left-20 w-96 h-96 bg-linear-to-r from-[#6c47ff]/5 to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-linear-to-l from-[#4169e1]/5 to-transparent rounded-full blur-3xl"></div>
             </div>
 
             <div className="relative h-full max-w-6xl mx-auto px-4 md:px-6 flex flex-col">
@@ -481,7 +481,7 @@ const StorePage = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="relative">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 rounded-full bg-linear-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center shadow-lg">
                         <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -525,7 +525,7 @@ const StorePage = () => {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.4, type: "spring" }}
-                        className="w-10 h-10 rounded-full bg-gradient-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center shadow-lg shrink-0"
+                        className="w-10 h-10 rounded-full bg-linear-to-r from-[#6c47ff] to-[#4169e1] flex items-center justify-center shadow-lg shrink-0"
                       >
                         <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -539,7 +539,7 @@ const StorePage = () => {
                           </p>
                         </div>
                         
-                        <div className="bg-gradient-to-r from-[#6c47ff]/10 to-[#4169e1]/10 rounded-xl p-4 mb-4">
+                        <div className="bg-linear-to-r from-[#6c47ff]/10 to-[#4169e1]/10 rounded-xl p-4 mb-4">
                           <p className="text-[#5a5a8f] text-sm font-semibold mb-2 flex items-center gap-2">
                             <svg className="w-4 h-4 text-[#6c47ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -598,7 +598,7 @@ const StorePage = () => {
                         <motion.div 
                           initial={{ scale: 0.9, x: 20 }}
                           animate={{ scale: 1, x: 0 }}
-                          className="liquid-glass-button bg-gradient-to-r from-[#6c47ff] to-[#4169e1] rounded-2xl rounded-tr-sm p-5 max-w-lg shadow-lg"
+                          className="liquid-glass-button bg-linear-to-r from-[#6c47ff] to-[#4169e1] rounded-2xl rounded-tr-sm p-5 max-w-lg shadow-lg"
                         >
                           <p className="text-white font-semibold leading-relaxed">{message.text}</p>
                         </motion.div>
@@ -614,7 +614,7 @@ const StorePage = () => {
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ type: "spring", stiffness: 200 }}
-                          className="w-10 h-10 rounded-full bg-gradient-to-r from-[#6c47ff] to-[#4169e1] shrink-0 flex items-center justify-center shadow-lg"
+                          className="w-10 h-10 rounded-full bg-linear-to-r from-[#6c47ff] to-[#4169e1] shrink-0 flex items-center justify-center shadow-lg"
                         >
                           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -648,14 +648,14 @@ const StorePage = () => {
                                     transition={{ delay: 0.3 + i * 0.1 }}
                                     className="group glass rounded-xl overflow-hidden border border-white/50 hover:border-[#6c47ff]/50 transition-all hover:shadow-xl hover:scale-105 cursor-pointer"
                                   >
-                                    <div className="relative aspect-3/4 bg-gradient-to-br from-white to-[#f6f6fa]">
+                                    <div className="relative aspect-3/4 bg-linear-to-br from-white to-[#f6f6fa]">
                                       <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-300"
                                       />
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                      <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     </div>
                                     <div className="p-3 bg-white/50 backdrop-blur-sm">
                                       <h4 className="text-[#151581] text-sm font-bold line-clamp-1 mb-1">{product.name}</h4>
@@ -707,7 +707,7 @@ const StorePage = () => {
                     <button
                       onClick={handleSendMessage}
                       disabled={!inputMessage.trim()}
-                      className="group liquid-glass-button px-8 py-4 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
+                      className="group liquid-glass-button px-8 py-4 bg-linear-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-xl font-semibold hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg"
                     >
                       <span className="flex items-center gap-2">
                         Send

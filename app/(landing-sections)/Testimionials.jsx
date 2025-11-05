@@ -222,8 +222,8 @@ const Testimonials = () => {
             ))}
           </div>
           {/* Fades for desktop */}
-          <div className="hidden md:block absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+          <div className="hidden md:block absolute top-0 left-0 bottom-0 w-32 bg-linear-to-r from-white to-transparent pointer-events-none z-10"></div>
+          <div className="hidden md:block absolute top-0 right-0 bottom-0 w-32 bg-linear-to-l from-white to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>

@@ -69,7 +69,7 @@ export function TestimonialCard({ title, text, author, date, source, image, isVe
       <div className="flex flex-col gap-4 flex-1 min-h-0">
         {/* Title */}
         {title && (
-          <h4 className="text-lg md:text-xl font-semibold text-[#292824] leading-tight flex-shrink-0" style={{ fontFamily: 'var(--font-primary)' }}>
+          <h4 className="text-lg md:text-xl font-semibold text-[#292824] leading-tight shrink-0" style={{ fontFamily: 'var(--font-primary)' }}>
             {title}
           </h4>
         )}
@@ -80,7 +80,7 @@ export function TestimonialCard({ title, text, author, date, source, image, isVe
         </p>
         
         {/* Author info */}
-        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#f0f0f5] flex-shrink-0">
+        <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#f0f0f5] shrink-0">
           {image && (
             <div className="w-12 h-12 rounded-full overflow-hidden bg-[#f6f6fa] shrink-0">
               <Image 
