@@ -1,0 +1,578 @@
+@import "tailwindcss";
+
+/* Geist font (primary font from lovi.care) */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RnOM4mJPby1QNtA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/geist/v4/gyByhwUxId8gMEwcGFU.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQ4mJPby1QNtA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/geist/v4/gyByhwUxId8gMEwcGFU.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RNeQ4mJPby1QNtA.woff2') format('woff2');
+}
+
+/* Import Inter font (also used in lovi.care) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ES Rebond Grotesque font (custom) */
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('https://framerusercontent.com/assets/J7eQi2k0G4QLAJS7Fq0TXfgNLkw.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('https://framerusercontent.com/assets/IGigBoMG75G04AEGyWGtbtIhliM.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ES Rebond Grotesque Italic */
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('https://framerusercontent.com/assets/b4tKkljkt64BKAy4UM2Rra4WDYY.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('https://framerusercontent.com/assets/fy01gTUKTvYxZCUvjXlQSBJOS8.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Premium elegant theme like lovi.care */
+  --background: #ffffff;
+  --background-secondary: #f6f6fa;
+  --background-accent: #f0f0f5;
+  --foreground: #292824;
+  --text-primary: #292824;
+  --text-secondary: #5a5a5f;
+  --text-muted: #888890;
+  
+  /* Subtle premium accent colors */
+  --primary-purple: #606DFF;
+  --primary-blue: #5570FF;
+  --accent-purple-soft: #C4A4FF;
+  --accent-pink-soft: #FF9EAA;
+  --accent-blue-soft: #8FD0FF;
+  --accent-teal-soft: #7EE3BF;
+  
+  /* Elegant gradient variables */
+  --gradient-primary: linear-gradient(135deg, #606DFF 0%, #5570FF 100%);
+  --gradient-soft: linear-gradient(135deg, #f6f6fa 0%, #ffffff 100%);
+  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f6f6fa 100%);
+  
+  /* Font stacks - ES Rebond Grotesque as primary */
+  --font-rebond: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-poppins: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-inter: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-geist: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 19%, #f6f6fa 21%);
+  color: var(--foreground);
+  font-family: var(--font-rebond);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes blurFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(96, 109, 255, 0.15), 0 0 40px rgba(85, 112, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(96, 109, 255, 0.25), 0 0 60px rgba(85, 112, 255, 0.15);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.6;
+    filter: blur(30px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-blur-fade-in {
+  animation: blurFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+/* Subtle premium glow effects */
+.glow-blue {
+  box-shadow: 0 4px 16px rgba(96, 109, 255, 0.12), 0 8px 32px rgba(85, 112, 255, 0.08);
+}
+
+.glow-pink {
+  box-shadow: 0 4px 16px rgba(255, 158, 170, 0.12), 0 8px 32px rgba(255, 158, 170, 0.08);
+}
+
+.glow-purple {
+  box-shadow: 0 4px 16px rgba(196, 164, 255, 0.12), 0 8px 32px rgba(196, 164, 255, 0.08);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #606DFF 0%, #5570FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-vibrant {
+  background: linear-gradient(135deg, #606DFF 0%, #5570FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth performance hints */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Scrollbar Styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+.scrollbar-thumb-purple-300::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+}
+
+.scrollbar-thumb-purple-300::-webkit-scrollbar-thumb:hover {
+  background: #c084fc;
+}
+
+.scrollbar-track-gray-100::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+/* Custom Chat Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6c47ff 0%, #4169e1 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a3dd9 0%, #3558c9 100%);
+}
+
+/* Gradient backgrounds - premium elegant */
+.gradient-primary {
+  background: linear-gradient(135deg, #606DFF 0%, #5570FF 100%);
+}
+
+.gradient-glow {
+  background: linear-gradient(135deg, #606DFF 0%, #5570FF 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(180deg, var(--background) 0%, var(--background-secondary) 100%);
+}
+
+/* Liquid Glass morphism effects - Premium elegant theme with better readability */
+.glass {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 8px 32px 0 rgba(96, 109, 255, 0.06),
+    0 4px 16px 0 rgba(85, 112, 255, 0.04),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(25px) saturate(150%);
+  -webkit-backdrop-filter: blur(25px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 4px 16px 0 rgba(96, 109, 255, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(35px) saturate(160%);
+  -webkit-backdrop-filter: blur(35px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 12px 40px 0 rgba(96, 109, 255, 0.08),
+    0 6px 20px 0 rgba(85, 112, 255, 0.05),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 16px 48px 0 rgba(96, 109, 255, 0.1),
+    0 8px 24px 0 rgba(85, 112, 255, 0.06),
+    inset 0 2px 3px 0 rgba(255, 255, 255, 1);
+}
+
+/* Elegant button style - premium minimal */
+.liquid-glass-button {
+  background: #606DFF;
+  border: 1px solid rgba(96, 109, 255, 0.2);
+  box-shadow: 
+    0 2px 8px 0 rgba(96, 109, 255, 0.15),
+    0 1px 3px 0 rgba(96, 109, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: white;
+  font-weight: 600;
+}
+
+.liquid-glass-button:hover {
+  background: #5570FF;
+  border-color: rgba(96, 109, 255, 0.3);
+  box-shadow: 
+    0 4px 16px 0 rgba(96, 109, 255, 0.25),
+    0 2px 8px 0 rgba(85, 112, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Elegant secondary button */
+.btn-elegant-secondary {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(96, 109, 255, 0.15);
+  color: #292824;
+  box-shadow: 
+    0 2px 8px 0 rgba(0, 0, 0, 0.06),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+}
+
+.btn-elegant-secondary:hover {
+  background: #ffffff;
+  border-color: rgba(96, 109, 255, 0.25);
+  box-shadow: 
+    0 4px 16px 0 rgba(0, 0, 0, 0.1),
+    0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+  color: #606DFF;
+}
+
+/* Product card hover effects - premium elegant */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(96, 109, 255, 0.12), 
+    0 10px 30px rgba(85, 112, 255, 0.08);
+}
+
+/* Floating gradient orbs - subtle premium */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.08;
+  pointer-events: none;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, #606DFF 0%, transparent 70%);
+}
+
+.orb-pink {
+  background: radial-gradient(circle, #FF9EAA 0%, transparent 70%);
+}
+
+.orb-purple {
+  background: radial-gradient(circle, #C4A4FF 0%, transparent 70%);
+}
+
+.orb-teal {
+  background: radial-gradient(circle, #7EE3BF 0%, transparent 70%);
+}
+
+/* Centered layout container */
+.container-center {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-center {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, .interactive {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Better text visibility - premium elegant theme */
+.text-primary {
+  color: #292824;
+  font-weight: 600;
+}
+
+.text-secondary {
+  color: #5a5a5f;
+  font-weight: 500;
+}
+
+.text-muted {
+  color: #888890;
+  font-weight: 400;
+}
+
+.text-accent-blue {
+  color: #5570FF;
+  font-weight: 600;
+}
+
+.text-accent-pink {
+  color: #FF9EAA;
+  font-weight: 600;
+}
+
+.text-accent-purple {
+  color: #606DFF;
+  font-weight: 600;
+}
+
+/* Section padding utilities */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+.section-padding-sm {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding-sm {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Improved card hover with liquid glass effect - premium */
+.liquid-glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-hover:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(96, 109, 255, 0.2);
+  box-shadow: 
+    0 16px 56px 0 rgba(96, 109, 255, 0.1),
+    0 8px 24px 0 rgba(85, 112, 255, 0.08),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-4px);
+}
+
+/* Custom slider styles */
+.slider-custom::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid #f0f0f5;
+}
+
+.slider-custom::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid #f0f0f5;
+}
+
