@@ -1,9 +1,18 @@
 import React from 'react';
+import { Inter } from 'next/font/google';
 import '../styles/globals.css';
 
 // Import the components
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+// Load Inter font with Next.js font optimization
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata = {
   title: 'Driply — Your AI Fashion Co-Pilot',
@@ -12,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" style={{ scrollBehavior: 'smooth' }} className={inter.variable}>
       <body 
         className="bg-white text-[#151581] antialiased" 
         style={{ 

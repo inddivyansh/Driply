@@ -41,9 +41,6 @@
   src: url('https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RNeQ4mJPby1QNtA.woff2') format('woff2');
 }
 
-/* Import Inter font (also used in lovi.care) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 /* ES Rebond Grotesque font (custom) */
 @font-face {
   font-family: 'ES Rebond Grotesque';
