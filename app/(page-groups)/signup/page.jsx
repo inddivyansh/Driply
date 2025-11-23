@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -19,10 +20,45 @@ export default function SignupPage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const router = useRouter();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle signup logic here
-    console.log('Signup:', formData);
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('http://localhost:8001/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          name: formData.name, 
+          email: formData.email, 
+          password: formData.password 
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.detail || 'Signup failed');
+      }
+
+      // Store token
+      localStorage.setItem('token', data.access_token);
+      router.push('/store');
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -49,6 +85,12 @@ export default function SignupPage() {
           </h1>
           <p className="text-[#5a5a5f] text-lg">Create your account</p>
         </div>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 text-red-600 rounded-xl text-sm font-medium text-center">
+            {error}
+          </div>
+        )}
 
         {/* Signup Form */}
         <form onSubmit={handleSubmit} className="space-y-5">

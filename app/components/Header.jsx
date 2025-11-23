@@ -14,6 +14,10 @@ const Header = () => {
   const isAuthPage = pathname === '/login' || pathname === '/signup';
 
   useEffect(() => {
+    // Check auth status
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };

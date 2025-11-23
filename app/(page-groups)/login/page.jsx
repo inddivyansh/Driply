@@ -3,15 +3,45 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login:', { email, password });
+    setLoading(true);
+    setError('');
+
+    try {
+      const res = await fetch('http://localhost:8001/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Store token
+        localStorage.setItem('token', data.access_token);
+        // Redirect to store
+        router.push('/store');
+      } else {
+        setError(data.detail || 'Login failed. Please check your credentials.');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('Failed to connect to server. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -41,6 +71,13 @@ export default function LoginPage() {
 
         {/* Login Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Error Message */}
+          {error && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+              {error}
+            </div>
+          )}
+
           {/* Email */}
           <div>
             <label htmlFor="email" className="block text-[#292824] font-semibold mb-2">
@@ -83,9 +120,10 @@ export default function LoginPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="liquid-glass-button w-full py-3 rounded-xl font-semibold text-lg"
+            disabled={loading}
+            className="liquid-glass-button w-full py-3 rounded-xl font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Log In
+            {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
 

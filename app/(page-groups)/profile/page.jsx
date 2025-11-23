@@ -1,17 +1,55 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 export default function ProfilePage() {
+  const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [profileData, setProfileData] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    name: '',
+    email: '',
     phone: '+91 98765 43210',
     address: 'Mumbai, Maharashtra, India',
   });
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          router.push('/login');
+          return;
+        }
+
+        const res = await fetch('http://localhost:8001/user/profile', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setProfileData({
+            name: data.Name || 'User',
+            email: data.Email || '',
+            phone: '+91 98765 43210',
+            address: 'Mumbai, Maharashtra, India',
+          });
+        } else {
+          localStorage.removeItem('token');
+          router.push('/login');
+        }
+      } catch (error) {
+        console.error('Failed to fetch profile:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, [router]);
 
   const handleChange = (e) => {
     setProfileData({
@@ -25,6 +63,14 @@ export default function ProfilePage() {
     // Save logic here
     console.log('Saved:', profileData);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-[#606DFF]/30 border-t-[#606DFF] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen px-4 py-32">
