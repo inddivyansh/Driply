@@ -425,10 +425,10 @@ const StorePage = () => {
                                 <p className="text-xs text-gray-500 mb-2">{prod.stock > 0 ? `${prod.stock} in stock` : 'Out of stock'}</p>
                               )}
                               <button
-                                onClick={() => handleBuyNow(prod)}
+                                onClick={() => prod.product_url ? window.open(prod.product_url, '_blank') : handleBuyNow(prod)}
                                 className="w-full px-3 py-2 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
                               >
-                                Buy Now
+                                {prod.product_url ? 'Buy on Flipkart' : 'Buy Now'}
                               </button>
                             </div>
                           ))}
