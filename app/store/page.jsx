@@ -288,7 +288,11 @@ const StorePage = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {categorizedProducts[category]?.length > 0 ? (
                       categorizedProducts[category].map((prod, i) => (
-                        <div key={i} className="glass rounded-2xl overflow-hidden border border-white/50 p-4 hover:shadow-lg transition-all group">
+                        <div 
+                          key={i} 
+                          className="glass rounded-2xl overflow-hidden border border-white/50 p-4 hover:shadow-lg transition-all group cursor-pointer"
+                          onClick={() => router.push(`/product/${prod.id || prod.product_id || i}`)}
+                        >
                           {prod.image_url ? (
                             <div className="aspect-square relative mb-4 rounded-xl overflow-hidden">
                                <img src={prod.image_url} alt={prod.title} className="object-cover w-full h-full" />
@@ -374,8 +378,11 @@ const StorePage = () => {
                     {initialProducts.length > 0 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 text-left">
                         {initialProducts.map((prod, pIdx) => (
-                          <div key={pIdx} className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
-                               onClick={() => setInputMessage(`Tell me more about ${prod.title}`)}>
+                          <div 
+                            key={pIdx} 
+                            className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                            onClick={() => router.push(`/product/${prod.id || prod.product_id || pIdx}`)}
+                          >
                             {prod.image_url && (
                               <div className="relative aspect-square mb-2 rounded-lg overflow-hidden">
                                 <img src={prod.image_url} alt={prod.title} className="object-cover w-full h-full" />
@@ -413,7 +420,11 @@ const StorePage = () => {
                       {msg.products && msg.products.length > 0 && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                           {msg.products.map((prod, pIdx) => (
-                            <div key={pIdx} className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden">
+                            <div 
+                              key={pIdx} 
+                              className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+                              onClick={() => router.push(`/product/${prod.id || prod.product_id || pIdx}`)}
+                            >
                               {prod.image_url && (
                                 <div className="relative aspect-square mb-2 rounded-lg overflow-hidden">
                                   <img src={prod.image_url} alt={prod.name || prod.title} className="object-cover w-full h-full" />
@@ -424,12 +435,20 @@ const StorePage = () => {
                               {prod.stock !== undefined && (
                                 <p className="text-xs text-gray-500 mb-2">{prod.stock > 0 ? `${prod.stock} in stock` : 'Out of stock'}</p>
                               )}
-                              <button
-                                onClick={() => handleBuyNow(prod)}
-                                className="w-full px-3 py-2 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
-                              >
-                                Buy Now
-                              </button>
+                              <div className="flex gap-2">
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); router.push(`/product/${prod.id || prod.product_id || pIdx}`); }}
+                                  className="flex-1 px-3 py-2 glass border border-[#6c47ff] text-[#6c47ff] rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
+                                >
+                                  View Details
+                                </button>
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); handleBuyNow(prod); }}
+                                  className="flex-1 px-3 py-2 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
+                                >
+                                  Buy Now
+                                </button>
+                              </div>
                             </div>
                           ))}
                         </div>
