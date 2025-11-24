@@ -34,6 +34,18 @@ const StorePage = () => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
   const [orderData, setOrderData] = useState(null);
   const [isCreatingOrder, setIsCreatingOrder] = useState(false);
+  const [copiedId, setCopiedId] = useState(null);
+
+  const copyProductId = async (productId) => {
+    if (!productId) return;
+    try {
+      await navigator.clipboard.writeText(productId);
+      setCopiedId(productId);
+      setTimeout(() => setCopiedId(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   // Auth Check & User Fetch
   useEffect(() => {
@@ -288,11 +300,7 @@ const StorePage = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {categorizedProducts[category]?.length > 0 ? (
                       categorizedProducts[category].map((prod, i) => (
-                        <div 
-                          key={i} 
-                          className="glass rounded-2xl overflow-hidden border border-white/50 p-4 hover:shadow-lg transition-all group cursor-pointer"
-                          onClick={() => router.push(`/product/${prod.id || prod.product_id || i}`)}
-                        >
+                        <div key={i} className="glass rounded-2xl overflow-hidden border border-white/50 p-4 hover:shadow-lg transition-all group">
                           {prod.image_url ? (
                             <div className="aspect-square relative mb-4 rounded-xl overflow-hidden">
                                <img src={prod.image_url} alt={prod.title} className="object-cover w-full h-full" />
@@ -378,11 +386,8 @@ const StorePage = () => {
                     {initialProducts.length > 0 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 text-left">
                         {initialProducts.map((prod, pIdx) => (
-                          <div 
-                            key={pIdx} 
-                            className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
-                            onClick={() => router.push(`/product/${prod.id || prod.product_id || pIdx}`)}
-                          >
+                          <div key={pIdx} className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                               onClick={() => setInputMessage(`Tell me more about ${prod.title}`)}>
                             {prod.image_url && (
                               <div className="relative aspect-square mb-2 rounded-lg overflow-hidden">
                                 <img src={prod.image_url} alt={prod.title} className="object-cover w-full h-full" />
@@ -420,27 +425,73 @@ const StorePage = () => {
                       {msg.products && msg.products.length > 0 && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                           {msg.products.map((prod, pIdx) => (
-                            <div 
-                              key={pIdx} 
-                              className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
-                              onClick={() => router.push(`/product/${prod.id || prod.product_id || pIdx}`)}
-                            >
+                            <div key={pIdx} className="bg-white/80 p-3 rounded-xl shadow-sm overflow-hidden">
                               {prod.image_url && (
                                 <div className="relative aspect-square mb-2 rounded-lg overflow-hidden">
                                   <img src={prod.image_url} alt={prod.name || prod.title} className="object-cover w-full h-full" />
                                 </div>
                               )}
-                              <h4 className="font-bold text-sm line-clamp-1">{prod.name || prod.title}</h4>
+                              <div className="flex justify-between items-start mb-1">
+                                <h4 className="font-bold text-sm line-clamp-1 flex-1 mr-2">{prod.name || prod.title}</h4>
+                                {prod.source && (
+                                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
+                                    prod.source.includes('Internet') ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'
+                                  }`}>
+                                    {prod.source === 'Internet Search' ? 'Web' : 'Local'}
+                                  </span>
+                                )}
+                              </div>
+                              
+                              {/* Product ID & Copy Button */}
+                              <div className="flex items-center gap-2 mb-2 bg-gray-50 p-1.5 rounded-lg">
+                                <span className="text-[10px] font-mono text-gray-500 truncate flex-1">
+                                  ID: {prod.product_id || prod.id}
+                                </span>
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    copyProductId(prod.product_id || prod.id);
+                                  }}
+                                  className={`text-[10px] px-2 py-0.5 rounded-md transition-all flex items-center gap-1 ${
+                                    copiedId === (prod.product_id || prod.id)
+                                      ? 'bg-green-100 text-green-700 font-bold'
+                                      : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                                  }`}
+                                >
+                                  {copiedId === (prod.product_id || prod.id) ? (
+                                    <>
+                                      <span>✓</span> Copied
+                                    </>
+                                  ) : (
+                                    <>
+                                      <span>📋</span> Copy ID
+                                    </>
+                                  )}
+                                </button>
+                              </div>
+
                               <p className="text-[#6c47ff] font-bold text-sm mb-2">₹{prod.price}</p>
                               {prod.stock !== undefined && (
                                 <p className="text-xs text-gray-500 mb-2">{prod.stock > 0 ? `${prod.stock} in stock` : 'Out of stock'}</p>
                               )}
-                              <button
-                                onClick={() => handleBuyNow(prod)}
-                                className="w-full px-3 py-2 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
-                              >
-                                Buy Now
-                              </button>
+                              
+                              {prod.buy_url ? (
+                                <a
+                                  href={prod.buy_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block w-full text-center px-3 py-2 bg-gradient-to-r from-[#ff4757] to-[#ff6b81] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
+                                >
+                                  Buy from here →
+                                </a>
+                              ) : (
+                                <button
+                                  onClick={() => handleBuyNow(prod)}
+                                  className="w-full px-3 py-2 bg-gradient-to-r from-[#6c47ff] to-[#4169e1] text-white rounded-lg font-semibold text-xs hover:scale-105 active:scale-95 transition-all"
+                                >
+                                  Buy Now
+                                </button>
+                              )}
                             </div>
                           ))}
                         </div>
